@@ -1,9 +1,6 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
+Similar to private eventbrite users can create events and manage other user signups.Events do take place at specific locations and time. This project will help put in practise various things I have learnt in Active Record Associations and Queries.
 
 * Ruby version
 
