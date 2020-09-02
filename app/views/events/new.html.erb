@@ -1,2 +1,24 @@
-<h1>Events#new</h1>
-<p>Find me in app/views/events/new.html.erb</p>
+<h1>Create a new event</h1>
+<%= form_for @event do |f|%>
+<% if @event.errors.any? %>
+  <div class="error_messages">
+   <h2>Form is invalid</h2>
+   <ul>
+     <% for msg in @event.errors.full_messages %>
+       <li><%= msg %></li>
+     <% end %>
+   </ul>
+  </div>
+  <% end %>
+<p>
+ <%= f.label :description %><br />
+ <%= f.text_field :description %>
+</p>
+<p>
+ <%= f.label :date%><br />
+ <%=f.text_field :date%>
+</p>
+<p>
+ <%= f.submit%>
+</p>
+<% end %>
