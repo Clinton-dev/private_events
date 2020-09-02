@@ -3,7 +3,8 @@ class SessionsController < ApplicationController
   end
   def create
     user = User.authenticate(params[:name])
-    if user && user.name 
+    
+    if user
       session[:user_id] = user.id
       redirect_to user_path(user.id), :notice => "you are logged in!!"
     else
