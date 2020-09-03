@@ -1,0 +1,38 @@
+class User
+ has_many :event_attendings, foreign_key: :event_attendee_id
+ has_many :attended_event, through: :event_attendings
+ has_many :created_events, foreign_key: :creator_id, class_name: "Event"
+end
+
+class Event
+ has_many :event_attendings, foreign_key: :attending_event_id
+ has_many :attendees, through: :event_attendings, source: :event_attendee
+ belongs_to :creator, class_name: "User"
+end
+
+class EventAttending
+  belongs_to :attendee_event, class_name:"User"
+  belongs-to :attended_event, class_name: "Event"
+end
+
+
+*****data models*****
+users
+id:integer
+name:string
+created_at:datetime
+updated_at:datetime
+-----------------------
+events
+id:integer
+description:string
+creator_id:integer
+date:datetime
+-----------------------
+event_attendings
+id:integer
+event_attendee_id:integer
+attending_event_id:integer
+created_at:datetime
+updated_at:datetime
+
