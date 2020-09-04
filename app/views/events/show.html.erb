@@ -5,3 +5,14 @@
 <strong>creator: </strong>
 <%= @event.creator.name%>
 </p>
+
+<p>
+<strong>attendees: (<%= @event.attendees.count%>)</strong>
+<% @event.attendees.each do |attendee|%>
+<ul>
+  <li>
+  <%= attendee.name%><br />
+  </li>
+  </ul>
+<% end %>
+</p>
