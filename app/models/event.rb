@@ -3,11 +3,7 @@ class Event < ApplicationRecord
   has_many :attendees, through: :attending1s, source: :attendee
   belongs_to :creator, class_name: "User"
 
-  def self.past(edate)
-    where('date <?', edate) if edate.present?
-  end
+  scope :past, ->(edate) { where('date <?', edate) if edate.present? }
 
-  def self.upcoming(edate)
-    where('date >?', edate) if edate.present?
-  end
+  scope :upcoming, ->(edate) { where('date >?', edate) if edate.present? }
 end
