@@ -10,10 +10,18 @@
 <div class="attending_events">
 <% current_user.events.each do |event|%>
   <ul>
-   <li><%= event.description%>
-   <%= link_to 'show', event_path(event.id)%>
-   </li>
-   <br />
+    
+    <%if event.date < Date.today%>
+      <h3>Previously attended events</h3>
+      <li><%= event.description%>
+      <%= link_to 'show', event_path(event.id)%>
+      </li><br />
+    <% else%>
+      <h3>Upcoming events</h3>
+      <li><%= event.description%>
+        <%= link_to 'show', event_path(event.id)%>
+      </li><br />
+    <% end %>   
   </ul>
 <% end %>
 </div>
