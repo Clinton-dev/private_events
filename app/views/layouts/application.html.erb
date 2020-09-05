@@ -12,10 +12,14 @@
   <body>
     <div class="user_nav">
       <% if current_user %>
-        logged in as <%= current_user.name%>.
+        <%= link_to 'Home',user_path(current_user.id)%>&nbsp;
+        <%= link_to 'Events', events_index_path%>&nbsp;
+        <%= link_to 'Create Event', new_event_path%>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        logged in as <%= current_user.name%>.&nbsp;
         <%= link_to "Log out", log_out_path%>
       <% else %>
-        <%= link_to "log in ", log_in_path%>
+        <%= link_to "log in ", log_in_path%>&nbsp;&nbsp;&nbsp;&nbsp;
         <%=link_to "sign up", sign_up_path%>
       <% end %>
     </div>
