@@ -24,6 +24,8 @@ gem 'jbuilder', '~> 2.5'
 
 # figaro
 gem 'figaro'
+#letter opener
+gem "letter_opener", :group => :development
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
