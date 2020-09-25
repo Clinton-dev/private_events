@@ -7,6 +7,6 @@ Similar to private eventbrite users can create events and manage other user sign
 * Rails version
   5.2.1
 * System dependencies
- figaro gem
+ figaro gem,
  letter opener gem
  
