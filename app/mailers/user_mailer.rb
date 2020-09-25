@@ -5,9 +5,9 @@ class UserMailer < ApplicationMailer
   #
   #   en.user_mailer.welcome_email.subject
   #
-  def welcome_email
-    @user = params[:user]
-    @url = 'http://example.com/login'
-    mail to: 'to@example.org', subject: 'Welcome to My Awesome Site'
+  def welcome_email(user)
+    @user = user
+    @url = 'http://localhost:3000/log_in'
+    mail to: @user.email, subject: 'Welcome to My Awesome Site'
   end
 end

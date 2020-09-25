@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      UserMailer.with(user: @user).welcome_email.deliver_later
+      UserMailer.welcome_email(@user).deliver_later
       redirect_to log_in_url, :notice => "User succefully created"
     else
       render :new
@@ -18,6 +18,6 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:name)
+    params.require(:user).permit(:name, :email)
   end
 end
