@@ -1,5 +1,15 @@
-<h1>User#welcome_email</h1>
-
-<p>
-  <%= @greeting %>, find me in app/views/user_mailer/welcome_email.html.erb
-</p>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Welcome to example.com, <%= @user.name %></h1>
+    <p>
+      You have successfully signed up to example.com,
+    </p>
+    <p>
+      To login to the site, just follow this link: <%= @url %>.
+    </p>
+  </body>
+</html>
